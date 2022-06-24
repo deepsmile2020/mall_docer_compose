@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  nacos:
+    image: nacos/nacos-server:2.0.2
+    container_name: mall_nacos
+    env_file:
+      - ./env/nacos.env
+    volumes:
+      - ./nacos/logs:/home/nacos/logs   
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9555:9555"
+    depends_on:
+      - mysql
+    restart: on-failure
+  mysql:
+    container_name: mall_mysql
+    image: mysql:5.7
+    env_file:
+      - ./env/mysql.env
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/logs:/logs
+      - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3306:3306"
+  nginx:
+    image: nginx:1.16.1
+    container_name: mall_nginx
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+    ports:
+      - "80:80"
+  redis:
+    image: redis:5.0.14
+    container_name: mall_redis
+    volumes:
+      - ./redis/data:/data
+      - ./redis/redis.conf:/etc/redis/redis.conf
+    command: redis-server /etc/redis/redis.conf
+    privileged: true
+    ports:
+    - "6379:6379"
