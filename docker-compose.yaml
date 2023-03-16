@@ -80,7 +80,7 @@ services:
       - ./tdengine/dbdata/taosdata:/var/lib/taos/
   hertzbeat:
     image: tancloud/hertzbeat
-    container_name: compose-hertzbeat
+    container_name: hertzbeat
     hostname: hertzbeat
     restart: always
     environment:

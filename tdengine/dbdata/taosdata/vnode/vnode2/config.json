@@ -1,0 +1,28 @@
+{
+  "db": "0.log",
+  "cfgVersion": 0,
+  "vgCfgVersion": 0,
+  "cacheBlockSize": 1,
+  "totalBlocks": 3,
+  "daysPerFile": 10,
+  "daysToKeep": 30,
+  "daysToKeep1": 30,
+  "daysToKeep2": 30,
+  "minRowsPerFileBlock": 100,
+  "maxRowsPerFileBlock": 4096,
+  "precision": 1,
+  "compression": 2,
+  "walLevel": 1,
+  "fsync": 3000,
+  "replica": 1,
+  "dbReplica": 1,
+  "wals": 3,
+  "quorum": 1,
+  "update": 0,
+  "cacheLastRow": 0,
+  "dbType": 0,
+  "nodeInfos": [{
+    "nodeId": 1,
+    "nodeEp": "tdengine:6030"
+  }]
+}

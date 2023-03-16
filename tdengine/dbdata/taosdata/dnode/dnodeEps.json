@@ -1,0 +1,8 @@
+{
+  "dnodeNum": 1,
+  "dnodeInfos": [{
+    "dnodeId": 1,
+    "dnodeFqdn": "tdengine",
+    "dnodePort": 6030
+  }]
+}

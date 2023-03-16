@@ -1,0 +1,58 @@
+2023-03-16 20:40:00,411 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 20:40:00,411 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 20:40:00,644 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 20:40:00,650 INFO listen for service meta change
+
+2023-03-16 20:40:00,659 INFO upgrade.state file is not exist
+
+2023-03-16 21:22:58,488 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 21:22:58,488 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 21:22:58,772 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 21:22:58,779 INFO listen for service meta change
+
+2023-03-16 21:22:58,789 INFO upgrade.state file is not exist
+
+2023-03-16 21:41:12,466 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 21:41:12,466 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 21:41:12,613 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 21:41:12,614 INFO listen for service meta change
+
+2023-03-16 21:41:12,619 INFO upgrade.state file is not exist
+
+2023-03-16 21:49:51,475 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 21:49:51,475 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 21:49:51,671 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 21:49:51,672 INFO listen for service meta change
+
+2023-03-16 21:51:25,920 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 21:51:25,920 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 21:51:26,085 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 21:51:26,087 INFO listen for service meta change
+
+2023-03-16 21:51:26,095 INFO upgrade.state file is not exist
+
+2023-03-16 21:56:00,205 WARN naming.distro config will be removed, please use core.protocol.distro replace.
+
+2023-03-16 21:56:00,205 WARN Using naming.distro config to replace core.distro config
+
+2023-03-16 21:56:00,441 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-03-16 21:56:00,443 INFO listen for service meta change
+
+2023-03-16 21:56:00,455 INFO upgrade.state file is not exist
+
