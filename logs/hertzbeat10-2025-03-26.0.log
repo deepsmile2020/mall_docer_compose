@@ -1,0 +1,60 @@
+2025-03-26 10:23:40.842 [background-preinit] INFO  org.hibernate.validator.internal.util.Version Line:21  - HV000001: Hibernate Validator 8.0.1.Final
+2025-03-26 10:23:40.903 [main] INFO  org.apache.hertzbeat.manager.Manager Line:50  - Starting Manager v2.0-SNAPSHOT using Java 17.0.2 with PID 10 (/opt/hertzbeat/apache-hertzbeat-1.6.1.jar started by root in /opt/hertzbeat)
+2025-03-26 10:23:40.904 [main] INFO  org.apache.hertzbeat.manager.Manager Line:660 - The following 1 profile is active: "prod"
+2025-03-26 10:23:42.090 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:139 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-26 10:23:42.344 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:208 - Finished Spring Data repository scanning in 247 ms. Found 32 JPA repository interfaces.
+2025-03-26 10:23:43.508 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:109 - Tomcat initialized with port 1157 (http)
+2025-03-26 10:23:43.518 [main] INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-1157"]
+2025-03-26 10:23:43.519 [main] INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2025-03-26 10:23:43.519 [main] INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-03-26 10:23:43.556 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Line:173 - Initializing Spring embedded WebApplicationContext
+2025-03-26 10:23:43.556 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:296 - Root WebApplicationContext: initialization completed in 2598 ms
+2025-03-26 10:23:43.621 [main] INFO  com.usthe.sureness.configuration.SurenessAutoConfiguration Line:195 - [sureness-starter] - SurenessSubjectFactory init success
+2025-03-26 10:23:43.790 [main] INFO  com.usthe.sureness.configuration.SurenessJakartaServletFilter Line:50  - servlet surenessFilter initialized
+2025-03-26 10:23:43.878 [main] INFO  com.zaxxer.hikari.HikariDataSource Line:110 - HikariPool-1 - Starting...
+2025-03-26 10:23:44.122 [main] INFO  com.zaxxer.hikari.pool.HikariPool Line:565 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@45a05350
+2025-03-26 10:23:44.124 [main] INFO  com.zaxxer.hikari.HikariDataSource Line:123 - HikariPool-1 - Start completed.
+2025-03-26 10:23:44.661 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo Line:87  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-26 10:23:44.672 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26 10:23:45.471 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory Line:45  - EclipseLink is in classpath; If applicable, EQL parser will be used.
+2025-03-26 10:23:45.720 [main] INFO  org.springframework.data.jpa.repository.support.JpaRepositoryFactory$EclipseLinkProjectionQueryCreationListener Line:344 - Usage of Spring Data projections detected on persistence provider EclipseLink; Make sure the following query methods declare result columns in exactly the order the accessors are declared in the projecting interface or the order of parameters for DTOs:
+2025-03-26 10:23:45.720 [main] INFO  org.springframework.data.jpa.repository.support.JpaRepositoryFactory$EclipseLinkProjectionQueryCreationListener Line:348 -  - public abstract java.util.List org.apache.hertzbeat.manager.dao.MonitorDao.findAppsStatusCount()
+2025-03-26 10:23:45.769 [main] WARN  org.apache.hertzbeat.manager.service.impl.ObjectStoreConfigServiceImpl Line:90  - object store config is null, please check the configuration file.
+2025-03-26 10:23:46.312 [main] INFO  org.springframework.data.jpa.repository.support.JpaRepositoryFactory$EclipseLinkProjectionQueryCreationListener Line:344 - Usage of Spring Data projections detected on persistence provider EclipseLink; Make sure the following query methods declare result columns in exactly the order the accessors are declared in the projecting interface or the order of parameters for DTOs:
+2025-03-26 10:23:46.312 [main] INFO  org.springframework.data.jpa.repository.support.JpaRepositoryFactory$EclipseLinkProjectionQueryCreationListener Line:348 -  - public abstract java.util.List org.apache.hertzbeat.alert.dao.AlertDao.findAlertPriorityNum()
+2025-03-26 10:23:46.959 [main] INFO  org.apache.hertzbeat.warehouse.store.history.vm.VictoriaMetricsDataStorage Line:115 - check victoria metrics server status success.
+2025-03-26 10:23:47.106 [main] INFO  org.flywaydb.core.FlywayExecutor Line:41  - Database: jdbc:postgresql://postgresql:5432/hertzbeat (PostgreSQL 15.12)
+2025-03-26 10:23:47.131 [main] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory Line:41  - Schema history table "public"."flyway_schema_history" does not exist yet
+2025-03-26 10:23:47.133 [main] INFO  org.flywaydb.core.internal.command.DbValidate Line:41  - Successfully validated 1 migration (execution time 00:00.013s)
+2025-03-26 10:23:47.142 [main] INFO  org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory Line:41  - Creating Schema History table "public"."flyway_schema_history" with baseline ...
+2025-03-26 10:23:47.180 [main] INFO  org.flywaydb.core.internal.command.DbBaseline Line:41  - Successfully baselined schema with version: 1
+2025-03-26 10:23:47.193 [main] INFO  org.flywaydb.core.internal.command.DbMigrate Line:41  - Current version of schema "public": 1
+2025-03-26 10:23:47.200 [main] INFO  org.flywaydb.core.internal.command.DbMigrate Line:41  - Migrating schema "public" to version "160 - update column"
+2025-03-26 10:23:47.216 [main] INFO  org.flywaydb.core.internal.command.DbMigrate Line:41  - Successfully applied 1 migration to schema "public", now at version v160 (execution time 00:00.007s)
+2025-03-26 10:23:47.228 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration Line:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-26 10:23:47.439 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping Line:59  - Adding welcome page: class path resource [dist/index.html]
+2025-03-26 10:23:48.181 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Line:58  - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-03-26 10:23:48.322 [main] INFO  org.apache.hertzbeat.manager.service.impl.AbstractGeneralConfigServiceImpl Line:62  - Configuration saved successfully
+2025-03-26 10:23:48.329 [main] INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-1157"]
+2025-03-26 10:23:48.341 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:241 - Tomcat started on port 1157 (http) with context path ''
+2025-03-26 10:23:48.361 [main] INFO  org.apache.hertzbeat.manager.Manager Line:56  - Started Manager in 8.054 seconds (process running for 8.41)
+2025-03-26 10:23:48.400 [main] INFO  org.apache.hertzbeat.collector.collect.database.JdbcSpiLoader Line:36  - start load jdbc drivers
+2025-03-26 10:23:48.400 [main] INFO  org.apache.hertzbeat.collector.collect.database.JdbcSpiLoader Line:45  - end load jdbc drivers
+2025-03-26 10:23:48.401 [main] INFO  org.apache.hertzbeat.manager.service.impl.NoticeConfigServiceImpl Line:298 - load default notice template in internal jar
+2025-03-26 10:23:48.405 [main] INFO  org.apache.hertzbeat.manager.service.impl.AppServiceImpl Line:636 - load define path /opt/hertzbeat/define
+2025-03-26 10:23:49.368 [netty-server-boss-0] INFO  io.netty.handler.logging.LoggingHandler Line:148 - [id: 0x246d261e] REGISTERED
+2025-03-26 10:23:49.369 [netty-server-boss-0] INFO  io.netty.handler.logging.LoggingHandler Line:148 - [id: 0x246d261e] BIND: 0.0.0.0/0.0.0.0:1158
+2025-03-26 10:23:49.371 [netty-server-boss-0] INFO  io.netty.handler.logging.LoggingHandler Line:148 - [id: 0x246d261e, L:/[0:0:0:0:0:0:0:0%0]:1158] ACTIVE
+2025-03-26 10:23:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:28:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:33:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:38:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:43:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:48:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:53:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 10:58:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 11:03:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 11:08:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 11:13:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 11:18:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state
+2025-03-26 11:23:51.731 [status-page-calculate-0] INFO  org.apache.hertzbeat.manager.component.status.CalculateStatus Line:98  - start to calculate status page state

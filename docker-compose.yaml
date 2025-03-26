@@ -1,20 +1,5 @@
 version: "3.8"
 services:
-  nacos:
-    image: nacos/nacos-server:2.0.2
-    container_name: mall_nacos
-    env_file:
-      - ./env/nacos.env
-    volumes:
-      - ./nacos/logs:/home/nacos/logs   
-    ports:
-      - "8848:8848"
-      - "9848:9848"
-      - "9555:9555"
-    depends_on:
-      - mysql
-    restart: always
-  
   mysql:
     container_name: mall_mysql
     image: mysql:5.7
@@ -28,21 +13,6 @@ services:
     ports:
       - "3306:3306"
     restart: always
-  nginx:
-    image: nginx:1.16.1
-    container_name: mall_nginx
-    volumes:
-      - ./nginx/html:/usr/share/nginx/html
-      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/logs:/var/log/nginx
-      - ./nginx/ssl_cert:/usr/share/nginx/ssl_cert
-    ports:
-      - "80:80"
-      - "443:443"
-      - "2443:2443"
-    restart: always
-
   redis:
     image: redis:5.0.14
     container_name: mall_redis
@@ -66,31 +36,65 @@ services:
     - "9000:9000"
     - "9090:9090"
     restart: always
-  tdengine:
-    image: "tdengine/tdengine:2.4.0.12"
-    container_name: tdengine
-    hostname: tdengine
+
+  postgres:
+    image: postgres:15
+    container_name: compose-postgresql
+    hostname: postgresql
     restart: always
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    volumes:
+      - ./dbdata/pgdata/data:/var/lib/postgresql/data
+      - ./conf/sql:/docker-entrypoint-initdb.d/      
+
+  victoria-metrics:
+    image: victoriametrics/victoria-metrics:v1.95.1
+    container_name: compose-victoria-metrics
+    hostname: victoria-metrics
+    restart: always
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://victoria-metrics:8428/-/healthy"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+      start_period: 30s
     environment:
       TZ: Asia/Shanghai
     ports:
-      - "6030-6049:6030-6049"
-      - "6030-6049:6030-6049/udp"
+      - "8428"
     volumes:
-      - ./tdengine/dbdata/taosdata:/var/lib/taos/
+      - ./dbdata/tsdbdata:/victoria-metrics-data
+
   hertzbeat:
-    image: tancloud/hertzbeat
-    container_name: hertzbeat
+    image: apache/hertzbeat
+    container_name: compose-hertzbeat
     hostname: hertzbeat
     restart: always
     environment:
       TZ: Asia/Shanghai
       LANG: zh_CN.UTF-8
     depends_on:
-      - mysql
-      - tdengine
+      postgres:
+        condition: service_healthy
+      victoria-metrics:
+        condition: service_healthy
     volumes:
-      - ./hertzbeat/conf/application.yml:/opt/hertzbeat/config/application.yml
-      - ./hertzbeat/conf/sureness.yml:/opt/hertzbeat/config/sureness.yml
+      - ./conf/application.yml:/opt/hertzbeat/config/application.yml
+      - ./conf/sureness.yml:/opt/hertzbeat/config/sureness.yml
+      - ./logs:/opt/hertzbeat/logs
+      - ./ext-lib:/opt/hertzbeat/ext-lib
     ports:
       - "1157:1157"
+      - "1158:1158"
+  
