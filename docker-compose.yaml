@@ -1,5 +1,32 @@
 version: "3.8"
 services:
+  nacos:
+    image: nacos/nacos-server:2.0.2
+    container_name: mall_nacos
+    env_file:
+      - ./env/nacos.env
+    volumes:
+      - ./nacos/logs:/home/nacos/logs   
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9555:9555"
+    depends_on:
+      - mysql
+    restart: always
+  nginx:
+    image: nginx:1.16.1
+    container_name: mall_nginx
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/ssl_cert:/usr/share/nginx/ssl_cert
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
   mysql:
     container_name: mall_mysql
     image: mysql:5.7
@@ -77,7 +104,7 @@ services:
       - ./dbdata/tsdbdata:/victoria-metrics-data
 
   hertzbeat:
-    image: apache/hertzbeat
+    image: apache/hertzbeat:v1.6.1
     container_name: compose-hertzbeat
     hostname: hertzbeat
     restart: always
